@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState,useR } from 'react';
 import { Link } from 'react-router-dom';
 import Navbar from '@material-tailwind/react/Navbar';
 import NavbarContainer from '@material-tailwind/react/NavbarContainer';
@@ -50,9 +50,11 @@ e.preventDefault();
         window.ethereum._metamask.isUnlocked().then(function(value) {
           if (loginbuttontext==="Login") {
             console.log("al login");
+             
             window.location.href="/login"
              
           } else window.location.href="/dashboard"
+
         });
       } catch (error) {
         console.log("e" + error);
@@ -123,14 +125,16 @@ e.preventDefault();
                             </div>
                            
                             <a>
-                                <Button
-                                    color="transparent"
-                                    className="bg-yellow-600 text-black ml-4"
-                                    ripple="dark"
-                                    onClick={submit}
-                                >
+                            <Link
+                            to={{
+                              pathname: loginbuttontext === "login" ? "/login":"/dashboard",
+                              search: "?sort=name",
+                              hash: "#the-hash",
+                              state: { fromDashboard: true }
+                            }}
+                          />
                                            {loginbuttontext} 
-                                </Button>
+                               
                             </a>
                         </div>
                     </Nav>
