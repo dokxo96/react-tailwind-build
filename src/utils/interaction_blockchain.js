@@ -1,6 +1,7 @@
 import Web3 from "web3";
 import ValidafySM from "../utils/Valid.json";
 import { Link } from 'react-router-dom';
+import {browserHistory} from "react-router";
 
 const { create } = require('ipfs-http-client');
 //contiene todas las redes que puede manejar validafy
@@ -212,12 +213,10 @@ export async function loadweb3() {
                     return err;
                   });
                 }
-                <Link
-                to= "/dashboard"
-              />
+                browserHistory.push("/dashboard");
                 
               
-                
+               
               } else {
                 window.alert("Error de red,Selecciona la red de BSC para seguir.");
               }
