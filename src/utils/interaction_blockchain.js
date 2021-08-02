@@ -1,7 +1,7 @@
 import Web3 from "web3";
 import ValidafySM from "../utils/Valid.json";
 import { Link } from 'react-router-dom';
-import {browserHistory} from "react-router";
+import { useHistory } from 'react-router-dom';
 
 const { create } = require('ipfs-http-client');
 //contiene todas las redes que puede manejar validafy
@@ -182,9 +182,13 @@ export function getNetworkName() {
   return nets[parseInt(localStorage.getItem("network"))][0].chainName;
 }
 export async function loadweb3() {
-    
+ 
+  // eslint-disable-next-line react-hooks/rules-of-hooks
+  const history = useHistory();
   try {
     init();
+   
+    
       if (window.ethereum) {
         window.web3 = new Web3(window.ethereum);
         if (await window.ethereum.enable()) {
@@ -213,7 +217,7 @@ export async function loadweb3() {
                     return err;
                   });
                 }
-                browserHistory.push("/dashboard");
+                history.push("/dashboard");
                 
               
                
