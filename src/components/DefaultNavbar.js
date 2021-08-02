@@ -40,7 +40,7 @@ export default function DefaultNavbar() {
          console.log(localStorage.getItem("isunlocked"))
          setloginbuttontext("Login") ;
      }else  setloginbuttontext("Mi dash") ; */
-        
+        console.log(loginbuttontext)
         })();
       }, []);
     
