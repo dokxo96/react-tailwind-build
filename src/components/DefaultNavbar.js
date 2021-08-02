@@ -62,106 +62,74 @@ e.preventDefault();
 
       }
     return (
-        <Navbar color="black" navbar>
-            <NavbarContainer>
-                <NavbarWrapper>
-                    <a
-                        href="https://material-tailwind.com?ref=mtk"
-                        target="_blank"
-                        rel="noreferrer"
-                    >
-                        <NavbarBrand><img src={logo}></img></NavbarBrand>
-                    </a>
-                    <NavbarToggler
-                        onClick={() => setOpenNavbar(!openNavbar)}
-                        color="white"
-                    />
-                </NavbarWrapper>
+      <Navbar color="black" navbar>
+        <NavbarContainer>
+          <NavbarWrapper>
+            <a
+              href="https://material-tailwind.com?ref=mtk"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <NavbarBrand>
+                <img src={logo}></img>
+              </NavbarBrand>
+            </a>
+            <NavbarToggler
+              onClick={() => setOpenNavbar(!openNavbar)}
+              color="white"
+            />
+          </NavbarWrapper>
 
-                <NavbarCollapse open={openNavbar}>
-                    <Nav>
-                        <div className="flex flex-col z-50 lg:flex-row lg:items-center">
-                              <div className="text-white">
-                                <Dropdown
-                                    color="transparent"
-                                    size="sm"
-                                    buttonType="link"
-                                    buttonText={
-                                        <div className="py-2.5 font-medium flex items-center">
-                                            <Icon
-                                                name="view_carousel"
-                                                size="2xl"
-                                                color="white"
-                                            />
-                                            <span className="ml-2">
-                                                Templates
-                                            </span>
-                                        </div>
-                                    }
-                                    ripple="light"
-                                >
-                                    <Link to="/">
-                                        <DropdownItem color="lightBlue">
-                                            Landing
-                                        </DropdownItem>
-                                    </Link>
-                                    <Link to="/profile">
-                                        <DropdownItem color="lightBlue">
-                                            Profile
-                                        </DropdownItem>
-                                    </Link>
-                                    <Link to="/dashboard">
-                                        <DropdownItem color="lightBlue">
-                                            dashboard
-                                        </DropdownItem>
-                                    </Link>
-                                     
-                                    <Link to="/register">
-                                        <DropdownItem color="lightBlue">
-                                            Register
-                                        </DropdownItem>
-                                    </Link>
-                                </Dropdown>
-                            </div>
-                           
-                            <a>
-                            
-                            <Link to={ loginbuttontext === "login" ? "/login":"/dashboard"}>
-                                        <DropdownItem color="lightBlue">
-                                            Register
-                                        </DropdownItem>
-                                    </Link>
-                            <Link to={ loginbuttontext === "login" ? "/login":"/dashboard"  }                    
-                            
-                          >
-                          <Button
-                                    color="transparent"
-                                    className="bg-yellow-600 text-black ml-4"
-                                    ripple="dark"
-                                    
-                                >
-                                           {loginbuttontext} 
-                                </Button>
-                          </Link>
-                          <Button
-                          color="transparent"
-                          className="bg-yellow-600 text-black ml-4"
-                          ripple="dark"
-                          
-                      >
-                      <Link to={ loginbuttontext === "login" ? "/login":"/dashboard"  }                    
-                            
-                      >
-                      {loginbuttontext} </Link>
-                                
-                      </Button>
-                                       
-                               
-                            </a>
-                        </div>
-                    </Nav>
-                </NavbarCollapse>
-            </NavbarContainer>
-        </Navbar>
+          <NavbarCollapse open={openNavbar}>
+            <Nav>
+              <div className="flex flex-col z-50 lg:flex-row lg:items-center">
+                <div className="text-white">
+                  <Dropdown
+                    color="transparent"
+                    size="sm"
+                    buttonType="link"
+                    buttonText={
+                      <div className="py-2.5 font-medium flex items-center">
+                        <Icon name="view_carousel" size="2xl" color="white" />
+                        <span className="ml-2">Templates</span>
+                      </div>
+                    }
+                    ripple="light"
+                  >
+                    <Link to="/">
+                      <DropdownItem color="lightBlue">Landing</DropdownItem>
+                    </Link>
+                    <Link to="/profile">
+                      <DropdownItem color="lightBlue">Profile</DropdownItem>
+                    </Link>
+                    <Link to="/dashboard">
+                      <DropdownItem color="lightBlue">dashboard</DropdownItem>
+                    </Link>
+
+                    <Link to="/register">
+                      <DropdownItem color="lightBlue">Register</DropdownItem>
+                    </Link>
+                  </Dropdown>
+                </div>
+
+                <a>
+                  <Link
+                    to={loginbuttontext === "login" ? "/login" : "/dashboard"}
+                  >
+                    <Button
+                      color="transparent"
+                      className="bg-yellow-600 text-black ml-4"
+                      ripple="dark"
+                    >
+                      {loginbuttontext}
+                    </Button>
+                  </Link>
+                 
+                </a>
+              </div>
+            </Nav>
+          </NavbarCollapse>
+        </NavbarContainer>
+      </Navbar>
     );
 }
