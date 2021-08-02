@@ -114,7 +114,7 @@ e.preventDefault();
 
                 <a>
                   <Link
-                    to={loginbuttontext === "login" ? "/login" : "/dashboard"}
+                    to={loginbuttontext === "Login" ? "/login" : "/dashboard"}
                   >
                     <Button
                       color="transparent"
