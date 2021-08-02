@@ -126,14 +126,18 @@ e.preventDefault();
                            
                             <a>
                             <Link
-                            to={{
-                              pathname: loginbuttontext === "login" ? "/login":"/dashboard",
-                              search: "?sort=name",
-                              hash: "#the-hash",
-                              state: { fromDashboard: true }
-                            }}
+                            to={ loginbuttontext === "login" ? "/login":"/dashboard"                      
+                            }
                           />
+                          <Button
+                                    color="transparent"
+                                    className="bg-yellow-600 text-black ml-4"
+                                    ripple="dark"
+                                    
+                                >
                                            {loginbuttontext} 
+                                </Button>
+                                       
                                
                             </a>
                         </div>
