@@ -125,10 +125,15 @@ e.preventDefault();
                             </div>
                            
                             <a>
-                            <Link
-                            to={ loginbuttontext === "login" ? "/login":"/dashboard"                      
-                            }
-                          />
+                            
+                            <Link to={ loginbuttontext === "login" ? "/login":"/dashboard"}>
+                                        <DropdownItem color="lightBlue">
+                                            Register
+                                        </DropdownItem>
+                                    </Link>
+                            <Link to={ loginbuttontext === "login" ? "/login":"/dashboard"  }                    
+                            
+                          >
                           <Button
                                     color="transparent"
                                     className="bg-yellow-600 text-black ml-4"
@@ -137,6 +142,19 @@ e.preventDefault();
                                 >
                                            {loginbuttontext} 
                                 </Button>
+                          </Link>
+                          <Button
+                          color="transparent"
+                          className="bg-yellow-600 text-black ml-4"
+                          ripple="dark"
+                          
+                      >
+                      <Link to={ loginbuttontext === "login" ? "/login":"/dashboard"  }                    
+                            
+                      >
+                      {loginbuttontext} </Link>
+                                
+                      </Button>
                                        
                                
                             </a>
