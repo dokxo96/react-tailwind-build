@@ -1,0 +1,2 @@
+ //"start": "npm-run-all -p watch:tailwind start:react",
+    //"build": "npm run build:tailwind && react-scripts build",
